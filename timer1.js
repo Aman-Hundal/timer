@@ -14,9 +14,11 @@ const alarmClock = function(cmdLineArgs) {
         process.stdout.write(`Alarm ${item}: BEEP`);
       }, item * 1000);
     }
-    setTimeout(() => {
-      process.stdout.write("\n");
-    }, item * 1000);
+    if (isNaN(item) === false && item > 0) {
+      setTimeout(() => {
+        process.stdout.write("\n");
+      }, item * 1000);
+    }
   }
 };
 
